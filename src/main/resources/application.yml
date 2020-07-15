@@ -1,0 +1,15 @@
+spring.application.name: product
+
+#server:
+#    port: 8083
+
+
+eureka:
+    client:
+        serviceUrl:
+            defaultZone: http://localhost:8761//eureka
+    #puerto dinamico
+    instance:
+        instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+server:
+    port: ${PORT:0}
