@@ -13,3 +13,12 @@ eureka:
         instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
 server:
     port: ${PORT:0}
+
+#zipkin aumenta al 100% la probabilidad de enviar la traza zipkin
+spring:
+    sleuth:
+        sampler:
+            probability: 1.0
+#configurar el endpoint del servidor zipkin
+    zipkin:
+        base-url: http://127.0.0.1:9411/
